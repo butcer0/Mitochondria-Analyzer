@@ -264,6 +264,8 @@ macro Analysis2D
 				selectWindow("Mask of " + inputName);
 				run("Duplicate...", "duplicate");
 				rename(inputName + " skeleton");
+				setThreshold(1, 255);
+				run("8-bit");
 				run("Skeletonize (2D/3D)");
 
 					//Calculate mean branch diameter
